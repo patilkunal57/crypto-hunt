@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/system';
 import { Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter , Routes} from 'react-router-dom';
 import './App.css';
 import CoinPage from './Pages/CoinPage';
 import Header from './components/Header';
@@ -10,14 +10,15 @@ import Container from '@mui/material/Container';
 function App() {
   
   return (
+    <>
+      <Header/>
+     <Routes>
+      <Route path="/" element={<Homepage/>} />
+      <Route path="/coins/:id" element ={<CoinPage/>} />s
+    </Routes>
+    </> 
 
-    <BrowserRouter>
-    <Header/>
-    <Container >
-        <Route path="/" component={Homepage} exact/>
-        <Route path="/coins/:id" component={CoinPage} exact/>
-    </Container>
-    </BrowserRouter>
+
   );
 }
 
