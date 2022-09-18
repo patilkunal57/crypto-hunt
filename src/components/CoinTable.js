@@ -12,7 +12,9 @@ import TextField from '@mui/material/TextField';
 import { Margin, Search } from '@mui/icons-material';
 import AppBar from '@mui/material/AppBar';
 import { red } from '@mui/material/colors';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+
 
 export function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -27,15 +29,14 @@ const CoinTable = () => {
 
     const { currency, symbol} = CryptoState();
 
-    const history = useHistory();
+
+    const history =  useNavigate();
     const fetchCoins = async () => {
         setLoading(true);
         const { data } = await axios.get(CoinList(currency));
-       
-    
         setCoins(data);
         setLoading(false);
-      };
+    };
     
       useEffect(() => {
         fetchCoins();
@@ -86,7 +87,7 @@ const CoinTable = () => {
                                 const profit = row.price_change_percentage_24h > 0;
 
                                 return (
-                                    <TableRow onClick={() => history.push(`/coins/${row.id}`)}
+                                    <TableRow onClick={() => history(`/coins/${row.id}`)}
                                     key = {row.name}
                                     style= {{
                                      

@@ -8,6 +8,7 @@ const Banner = () => {
     <Typography
     variant="h2"
     style={{
+      color: "#EEBC1D",
       fontWeight: "bold",
       marginBottom: 15,
       fontFamily: "Montserrat",

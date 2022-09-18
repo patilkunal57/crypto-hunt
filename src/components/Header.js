@@ -34,7 +34,7 @@ const Header = () => {
     <AppBar position="static" color='secondary'>
       <Container>
         <Toolbar >
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 , color: "#EEBC1D"}} >
             Crypto Hunt
           </Typography>
         
