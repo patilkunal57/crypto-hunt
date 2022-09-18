@@ -6,7 +6,6 @@ import { SingleCoin } from '../config/api';
 import { CryptoState } from '../cryptoContext';
 import { Container, createTheme, Grid, LinearProgress, ThemeProvider, Typography} from '@mui/material';
 import CoinInfo from '../components/CoinInfo';
-import parse from 'html-react-parser';
 import { numberWithCommas } from '../components/CoinTable';
 
 
