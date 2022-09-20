@@ -60,7 +60,7 @@ const CoinInfo = ({coin}) => {
   useEffect(() => {
     fetchHistoricData();
   
-  }, [days]);
+  }, [days, currency]);
   
   return (
     <>
@@ -72,7 +72,8 @@ const CoinInfo = ({coin}) => {
       justifyContent: "center",
       marginTop: 25,
       padding: 40,}}>
-         <Line 
+        {!historicData ? <CircularProgress   style={{color : "gold", height: 200.0,
+                width: 200.0,   justifyContent: 'center',}}/> :  <Line 
       data={{
       labels: historicData? historicData.map((coin) => {
        let date = new Date(coin[0]);
@@ -90,7 +91,7 @@ const CoinInfo = ({coin}) => {
       },
      
      ],
-    }} />
+    }} />}
    
    <div style={{ display: "flex",
                 marginTop: 20,
